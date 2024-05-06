@@ -16,6 +16,7 @@ using namespace android;
 
 #include "include/fpdfview.h"
 #include "include/fpdf_doc.h"
+#include "include/fpdf_formfill.h"
 #include <string>
 #include <vector>
 #include <mutex>
@@ -470,7 +471,7 @@ JNI_FUNC(void, PdfiumCore, nativeRenderPage)(JNI_ARGS, jlong pagePtr, jobject ob
 JNI_FUNC(void, PdfiumCore, nativeRenderPageBitmap)(JNI_ARGS, jlong pagePtr, jobject bitmap,
                                              jint dpi, jint startX, jint startY,
                                              jint drawSizeHor, jint drawSizeVer,
-                                             jboolean renderAnnot){
+                                             jboolean renderAnnot, jlong docPtr){
 
     FPDF_PAGE page = reinterpret_cast<FPDF_PAGE>(pagePtr);
 
@@ -545,6 +546,19 @@ JNI_FUNC(void, PdfiumCore, nativeRenderPageBitmap)(JNI_ARGS, jlong pagePtr, jobj
                            startX, startY,
                            (int)drawSizeHor, (int)drawSizeVer,
                            0, flags );
+
+    if(renderAnnot) {
+        try {
+            DocumentFile *doc = reinterpret_cast<DocumentFile*>(docPtr);
+            FPDF_FORMFILLINFO form_callbacks = {0};
+            form_callbacks.version = 2;
+            FPDF_FORMHANDLE form = FPDFDOC_InitFormFillEnvironment(doc->pdfDocument, &form_callbacks);
+            FPDF_FFLDraw(form, pdfBitmap, page, startX, startY, (int)drawSizeHor, (int)drawSizeVer, 0, flags);
+        }
+        catch (std::exception &e) {
+            // Block of code to handle errors
+        }
+    }
 
     if (info.format == ANDROID_BITMAP_FORMAT_RGB_565) {
         rgbBitmapTo565(tmp, sourceStride, addr, &info);

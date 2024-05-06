@@ -21,7 +21,7 @@ android {
     compileSdk rootProject.tools.compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.tools.minSdkVersion
+        minSdkVersion rootProject.tools.minSdk
         targetSdk rootProject.tools.targetSdk
 
         versionCode rootProject.tools.versionCode
@@ -84,9 +84,9 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.lion1988dev'
+            groupId = 'com.github.marain87'
             artifactId = 'PdfiumAndroid'
-            version = "1.9.4"
+            version = "1.9.5"
 
             afterEvaluate {
                 from components.release
