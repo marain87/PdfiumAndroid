@@ -1,5 +1,5 @@
-## 1.9.5 (2024-05-06)
-* Fix issue to support annotation and signature
+## 1.9.6 (2025-06-03)
+* upgrade gradle plugin and ndk to support for 16KB pages
 
 ## 1.9.4 (2024-03-19)
 * Fix issue for the newest Android devices with API 34+

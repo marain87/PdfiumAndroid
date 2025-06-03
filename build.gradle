@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library' version '8.3.0'
+    id 'com.android.library' version '8.7.3'
     id 'maven-publish'
 }
 
@@ -8,12 +8,12 @@ ext {
             minSdk      : 21,
             targetSdk   : 34,
             compileSdk  : 34,
-            versionCode: 4,
-            versionName: '1.9.5'
+            versionCode: 5,
+            versionName: '1.9.6'
     ]
 }
 
-group "com.github.lion1988dev"
+group "com.github.marain87"
 
 android {
     namespace "com.shockwave.pdfium"
@@ -61,7 +61,7 @@ android {
         }
     }
 
-    ndkVersion '25.2.9519653'
+    ndkVersion '28.1.13356709'
 
     externalNativeBuild {
         cmake {
@@ -86,7 +86,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.marain87'
             artifactId = 'PdfiumAndroid'
-            version = "1.9.5"
+            version = "1.9.6"
 
             afterEvaluate {
                 from components.release

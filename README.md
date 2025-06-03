@@ -2,6 +2,9 @@ The purpose is to remove old support libraries so we no longer need to use jetif
 
 It will be used with the forked [AndroidPdFViewer](https://github.com/lion1988dev/AndroidPdfViewer)
 
+## What's new in 1.9.6
+* upgrade gradle plugin and ndk to support for 16KB pages
+
 ## What's new in 1.9.5
 * Fix issue to support annotation and signature
 
@@ -44,7 +47,7 @@ dependencyResolutionManagement {
 
 Add to the app _build.gradle_:
 
-`implementation 'com.github.marain87:PdfiumAndroid:1.9.5'`
+`implementation 'com.github.marain87:PdfiumAndroid:1.9.6'`
 
 Library is available in jcenter and Maven Central repositories.
 
