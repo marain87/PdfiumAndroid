@@ -2,6 +2,9 @@ The purpose is to remove old support libraries so we no longer need to use jetif
 
 It will be used with the forked [AndroidPdFViewer](https://github.com/lion1988dev/AndroidPdfViewer)
 
+## What's new in 1.9.5
+* Fix issue to support annotation and signature
+
 ## What's new in 1.9.4
 * Fix issue for the newest Android devices with API 34+
 
