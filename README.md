@@ -41,7 +41,7 @@ dependencyResolutionManagement {
 
 Add to the app _build.gradle_:
 
-`implementation 'com.github.lion1988dev:PdfiumAndroid:1.9.4'`
+`implementation 'com.github.marain87:PdfiumAndroid:1.9.5'`
 
 Library is available in jcenter and Maven Central repositories.
 
