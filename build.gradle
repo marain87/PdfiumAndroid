@@ -8,12 +8,12 @@ ext {
             minSdk      : 21,
             targetSdk   : 34,
             compileSdk  : 34,
-            versionCode: 5,
-            versionName: '1.9.6'
+            versionCode: 6,
+            versionName: '1.9.7'
     ]
 }
 
-group "com.github.marain87"
+group "com.github.whizpool"
 
 android {
     namespace "com.shockwave.pdfium"
@@ -84,9 +84,9 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.marain87'
+            groupId = 'com.github.whizpool'
             artifactId = 'PdfiumAndroid'
-            version = "1.9.6"
+            version = "1.9.7"
 
             afterEvaluate {
                 from components.release
