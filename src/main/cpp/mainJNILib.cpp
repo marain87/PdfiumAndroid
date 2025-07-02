@@ -704,3 +704,18 @@ JNI_FUNC(jobject, PdfiumCore, nativePageCoordsToDevice)(JNI_ARGS, jlong pagePtr,
 }
 
 }//extern C
+
+
+JNI_FUNC(jobject, PdfiumCore, nativeDeviceCoordsToPage)(JNI_ARGS, jlong pagePtr, jint startX,
+                                                        jint startY, jint sizeX,
+                                                        jint sizeY, jint rotate, jint deviceX,
+                                                        jint deviceY) {
+    FPDF_PAGE page = reinterpret_cast<FPDF_PAGE>(pagePtr);
+    double pageX, pageY;
+
+    FPDF_DeviceToPage(page, startX, startY, sizeX, sizeY, rotate, deviceX, deviceY, &pageX, &pageY);
+
+    jclass clazz = env->FindClass("android/graphics/PointF");
+    jmethodID constructorID = env->GetMethodID(clazz, "<init>", "(FF)V");
+    return env->NewObject(clazz, constructorID, (jfloat)pageX, (jfloat)pageY);
+}
