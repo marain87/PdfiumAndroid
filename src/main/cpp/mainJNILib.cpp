@@ -702,10 +702,6 @@ JNI_FUNC(jobject, PdfiumCore, nativePageCoordsToDevice)(JNI_ARGS, jlong pagePtr,
     jmethodID constructorID = env->GetMethodID(clazz, "<init>", "(II)V");
     return env->NewObject(clazz, constructorID, deviceX, deviceY);
 }
-
-}//extern C
-
-
 JNI_FUNC(jobject, PdfiumCore, nativeDeviceCoordsToPage)(JNI_ARGS, jlong pagePtr, jint startX,
                                                         jint startY, jint sizeX,
                                                         jint sizeY, jint rotate, jint deviceX,
@@ -719,3 +715,8 @@ JNI_FUNC(jobject, PdfiumCore, nativeDeviceCoordsToPage)(JNI_ARGS, jlong pagePtr,
     jmethodID constructorID = env->GetMethodID(clazz, "<init>", "(FF)V");
     return env->NewObject(clazz, constructorID, (jfloat)pageX, (jfloat)pageY);
 }
+
+}//extern C
+
+
+
