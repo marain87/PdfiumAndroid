@@ -6,10 +6,10 @@ plugins {
 ext {
     tools = [
             minSdk      : 21,
-            targetSdk   : 34,
-            compileSdk  : 34,
-            versionCode: 6,
-            versionName: '1.9.7'
+            targetSdk   : 35,
+            compileSdk  : 35,
+            versionCode: 7,
+            versionName: '1.9.8'
     ]
 }
 
@@ -78,7 +78,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
 }
 
 publishing {
