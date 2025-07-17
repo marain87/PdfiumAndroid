@@ -2,6 +2,9 @@ The purpose is to remove old support libraries so we no longer need to use jetif
 
 It will be used with the forked [AndroidPdFViewer](https://github.com/lion1988dev/AndroidPdfViewer)
 
+## What's new in 1.9.8
+* Fix issue on FPDF_DeviceToPage
+
 ## What's new in 1.9.7
 * add support for FPDF_DeviceToPage
 
@@ -50,7 +53,7 @@ dependencyResolutionManagement {
 
 Add to the app _build.gradle_:
 
-`implementation 'com.github.marain87:PdfiumAndroid:1.9.7'`
+`implementation 'com.github.marain87:PdfiumAndroid:1.9.8'`
 
 Library is available in jcenter and Maven Central repositories.
 
